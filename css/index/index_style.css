@@ -1,0 +1,283 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+}
+
+main {
+    margin-top: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 100vw; /* 뷰포트 너비로 설정 */
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100vw; /* 뷰포트 너비로 설정 */
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    min-height: 100vh;
+    width: 100vw; /* 뷰포트 너비로 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+}
+
+.section-content {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.section:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.section:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.section h2::after {
+    content: none;
+}
+
+.section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 회사 소개 섹션 */
+.company-intro {
+    background-color: #f8f8f8;
+}
+
+/* 비전 및 미션 섹션 */
+.vision-mission {
+    background-color: #ffffff;
+}
+
+.vision-mission .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.vision, .mission {
+    flex-basis: 48%;
+}
+
+/* 서비스 소개 섹션 */
+.services {
+    background-color: #f8f8f8;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.service-item {
+    flex-basis: calc(33.333% - 20px);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* 섹션 구분선 */
+.section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #1a73e8;
+}
+
+/* 배너와 슬로건 섹션 수정 */
+.image-section {
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-above-image {
+    position: relative;
+    z-index: 2;
+    color: #333;
+    text-shadow: none;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-above-image h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.text-above-image h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #1a73e8;
+}
+
+.text-above-image p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.responsive-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.responsive-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .section {
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 0;
+    }
+
+    .vision-mission .content-wrapper {
+        flex-direction: column;
+    }
+
+    .vision, .mission {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+
+    .service-item {
+        flex-basis: calc(50% - 15px);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .section {
+        padding: 0;
+    }
+}
+
+@media (min-width: 1025px) {
+    .section {
+        padding: 0;
+    }
+
+    .section h2 {
+        font-size: 42px;
+    }
+
+    .section p {
+        font-size: 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .section h2 {
+        font-size: 48px;
+    }
+
+    .section p {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-content {
+        padding: 0 10px; /* 변경: 작은 화면에서 좌우 패딩 감소 */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-content {
+        padding: 0 5px; /* 변경: 더 작은 화면에서 좌우 패딩 추가 감소 */
+    }
+}
